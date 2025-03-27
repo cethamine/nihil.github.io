@@ -1,1 +1,1 @@
-# nihil.github.io
+# nihil.lol
