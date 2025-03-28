@@ -161,4 +161,17 @@ function moveAnchor(event) {
 }
 
 // w stackoverflow
-document.oncontextmenu = document.body.oncontextmenu = function () { return false; }
+// Disable right-click
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+    alert('No cheating ...');
+});
+
+// Disable F12 and Ctrl+Shift+I (Developer Tools)
+document.onkeydown = function (e) {
+    if (e.keyCode == 123 || // F12
+        (e.ctrlKey && e.shiftKey && e.keyCode == 73)) { // Ctrl+Shift+I
+        e.preventDefault();
+        alert('No cheating bru xD ...');
+    }
+};
