@@ -77,18 +77,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         });
                     });
             } else {
-                fetch('index.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        const tdiv = document.createElement('div');
-                        tdiv.innerHTML = data;
-
-                        const tdivCode = Array.from(tdiv.querySelector('#content').children);
-                        content.innerHTML = '';
-                        tdivCode.forEach(el => {
-                            content.appendChild(el);
-                        });
-                    });
+                window.location.href = '/';
             }
         });
     });
