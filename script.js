@@ -46,6 +46,9 @@ window.addEventListener('DOMContentLoaded', () => {
     headerItems.forEach(item => {
         item.addEventListener('click', function () {
             const url = this.getAttribute('data-url');
+            document.querySelector('.active').classList.remove('active');
+            this.classList.toggle('active');
+
             if (url) {
                 fetch(url)
                     .then(response => response.text())
@@ -58,30 +61,33 @@ window.addEventListener('DOMContentLoaded', () => {
                         content.innerHTML = '';
                         content.appendChild(tdivCode.item(0))
 
+                        document.querySelectorAll('#dynamic-script').forEach(script => script.remove());
+
                         scripts.forEach(oldScript => {
-                            const newScript = document.createElement('script');
                             if (oldScript.src) {
-                                newScript.src = oldScript.src; // If script has a src, load it
+                                if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
+                                    const newScript = document.createElement('script');
+                                    newScript.src = oldScript.src;
+                                    newScript.defer = true;
+                                    document.body.appendChild(newScript);
+                                }
                             } else {
-                                newScript.textContent = oldScript.textContent; // Otherwise, inline script
+                                new Function(oldScript.textContent)();
                             }
-                            document.body.appendChild(newScript); // Append to body to execute
                         });
                     });
-
-                document.querySelector('.active').classList.remove('active');
-                this.classList.toggle('active');
             } else {
-                console.log('ok')
                 fetch('index.html')
                     .then(response => response.text())
                     .then(data => {
                         const tdiv = document.createElement('div');
                         tdiv.innerHTML = data;
 
-                        const tdivCode = tdiv.querySelector('#content').children;
+                        const tdivCode = Array.from(tdiv.querySelector('#content').children);
                         content.innerHTML = '';
-                        content.appendChild(tdivCode.item(0))
+                        tdivCode.forEach(el => {
+                            content.appendChild(el);
+                        });
                     });
             }
         });
