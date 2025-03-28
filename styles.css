@@ -1,0 +1,294 @@
+
+/* Root lol */
+
+:root {
+    --body-bg: #101010;
+    --section-profile-tc: #424242;
+    --section-profile-tc_hover: #606060;
+    --header-bg: #090909;
+    --btns-bg: #181818;
+    --body-tc: white;
+}
+
+/* Light Mode */
+.light-mode {
+    --body-bg: #f8f8f8;
+    --section-profile-tc: #c0c0c0;
+    --section-profile-tc_hover: #a0a0a0;
+    --header-bg: #ffffff;
+    --btns-bg: #e0e0e0;
+    --body-tc: black;
+}
+
+
+/* Google idk */
+
+.merriweather-normal {
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.raleway-normal {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ggsans-Normal';
+    src: url('./fonts/discorddontsuemepls/ggsans-Normal.ttf');
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+    width: 40px;
+    user-select: none;
+    transition: ease-in-out font-size 0.1s;
+    cursor: pointer;
+}
+
+.material-symbols-outlined:hover {
+    font-size: 31px;
+}
+
+
+/* Standards idk */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+*::selection {
+    background-color: transparent;
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--body-tc);
+    font-family: ggsans-Normal;
+}
+
+/* Header & Container idk */
+
+.container {
+    height: 80vh;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--header-bg);
+    margin-top: 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.header__nav {
+    display: flex;
+    margin-left: auto;
+}
+
+.header .header__logo {
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.header__nav .blogs,
+.header__nav .about {
+    padding: 4px 8px 4px 8px;
+    margin-left: 12px;
+    background-color: var(--btns-bg);
+    border-radius: 8px;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+.header__nav .blogs:hover,
+.header__nav .about:hover {
+    text-decoration: underline;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+/* Sections & Footer idk */
+
+.sections {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 40px;
+    opacity: 0.2;
+    user-select: none;
+    font-size: 11px;
+}
+
+.footer a {
+    color: var(--body-tc);
+    text-decoration: none;
+}
+
+.section__container {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.section__header {
+    font-weight: 100;
+    opacity: 0.9;
+    width: 90px;
+    text-align: right;
+    font-size: 12px;
+}
+
+.section__header img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: ease-in-out width 0.1s;
+    cursor: pointer;
+}
+
+.section__header .healthpoint {
+    font-size: 22px;
+    position: absolute;
+    color: red;
+}
+
+.section__header img:hover {
+    width: 61px;
+}
+
+.section__body {
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 12px;
+}
+
+.section__body-profile {
+    color: var(--section-profile-tc);
+    font-style: italic;
+    font-size: 16px;
+    white-space: pre-line;
+}
+
+.section__body-profile a {
+    color: var(--section-profile-tc);
+    transition: ease-in-out color 0.1s;
+}
+
+.section__body-profile a:hover {
+    color: var(--section-profile-tc_hover);
+}
+
+.section__body-workspace {
+    position: relative;
+    width: 500px;
+}
+
+.no__contact {
+    position: absolute;
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+
+/* blog css */
+
+
+.section__body-blogplace {
+    padding: 8px 20px 12px 20px;
+    background-color: var(--btns-bg);
+    border-radius: 8px;
+    width: 500px;
+    margin-bottom: -10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: ease-in-out font-size 0.1s;
+}
+
+.section__body-blogplace:hover {
+    font-size: 19px;
+}
+
+/* For mobiel lol */
+
+@media (max-width: 1220px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 920px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 720px) {
+    .container {
+        width: 90%;
+    }
+
+    .section__body-blogplace,
+    .section__body-workspace {
+        width: 300px;
+        font-size: 16px;
+    }
+}
+
+
+/* Fancy rainbow keyframes xDD */
+
+@keyframes rainbow-text {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.rainbow {
+    background: linear-gradient(90deg,
+            #ff0000, #ff7300, #fffb00, #48ff00, #00ffee, #2b65ff,
+            #8000ff, #ff00fb, #ff0000);
+    background-size: 500% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow-text 6s linear infinite;
+}

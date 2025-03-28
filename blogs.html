@@ -1,0 +1,23 @@
+<section id="content" class="">
+  <div class="blogs__container">
+    <div class="sections" data-url="/03-28/hello-world">
+      <div class="section__container section__container-blog">
+        <div class="section__header">03-28</div>
+        <div class="section__body">
+          <div class="section__body-workplace section__body-blogplace">
+            hello <span class="rainbow">world</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const blogItems = Array.from(document.querySelector('.blogs__container').children);
+    blogItems.forEach(item => {
+      item.addEventListener('click', function () {
+        console.log(this.getAttribute('data-url'))
+      });
+    });
+  </script>
+</section>
