@@ -173,9 +173,14 @@ document.onkeydown = function (e) {
         e.preventDefault();
         alert('No cheating xD ...');
     }
-    
+
     if ((e.ctrlKey && e.shiftKey && e.keyCode == 73)) {
         e.preventDefault();
         alert('no chEATING! ! !!11...');
+    }
+
+    if (e.ctrlKey && e.keyCode === 85) {
+        e.preventDefault();  // Prevent the default action (viewing source)
+        alert('yes this is blocked too.');
     }
 };
