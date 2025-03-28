@@ -5,7 +5,7 @@
     --body-bg: #101010;
     --section-profile-tc: #424242;
     --section-profile-tc_hover: #606060;
-    --header-bg: #090909;
+    --header-bg: transparent;
     --btns-bg: #181818;
     --body-tc: white;
 }

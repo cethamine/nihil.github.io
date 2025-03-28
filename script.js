@@ -19,7 +19,7 @@ const sunAndmoon = document.querySelector('.brand');
 
 const avatar = document.querySelector('.section__header img');
 
-const headerItems = Array.from(document.querySelector('.header__nav').children);
+// const headerItems = Array.from(document.querySelector('.header__nav').children);
 
 const content = document.getElementById('content');
 
