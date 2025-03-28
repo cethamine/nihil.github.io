@@ -56,7 +56,6 @@ window.addEventListener('DOMContentLoaded', () => {
                         const scripts = tdiv.querySelectorAll('script');
                         const tdivCode = tdiv.querySelector('#content').children;
                         content.innerHTML = '';
-                        console.log(tdivCode.item(0))
                         content.appendChild(tdivCode.item(0))
 
                         scripts.forEach(oldScript => {
@@ -73,7 +72,17 @@ window.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('.active').classList.remove('active');
                 this.classList.toggle('active');
             } else {
-                // soon
+                console.log('ok')
+                fetch('index.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        const tdiv = document.createElement('div');
+                        tdiv.innerHTML = data;
+
+                        const tdivCode = tdiv.querySelector('#content').children;
+                        content.innerHTML = '';
+                        content.appendChild(tdivCode.item(0))
+                    });
             }
         });
     });
