@@ -176,6 +176,6 @@ document.onkeydown = function (e) {
     
     if ((e.ctrlKey && e.shiftKey && e.keyCode == 73)) {
         e.preventDefault();
-        alert('I said no chEATING! ...');
+        alert('no chEATING! ! !!11...');
     }
 };
