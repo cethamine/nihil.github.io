@@ -15,7 +15,7 @@
     --body-bg: #f8f8f8;
     --section-profile-tc: #c0c0c0;
     --section-profile-tc_hover: #a0a0a0;
-    --header-bg: #ffffff;
+    --header-bg: transparent;
     --btns-bg: #e0e0e0;
     --body-tc: black;
 }
