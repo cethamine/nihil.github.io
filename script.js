@@ -4,6 +4,19 @@
 
 const owlIcon = document.querySelector('.material-symbols-outlined');
 
+
+owlIcon.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+
+    if (document.body.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+        sunAndmoon.textContent = 'sköll';
+    } else {
+        localStorage.setItem('theme', 'dark');
+        sunAndmoon.textContent = 'hati';
+    }
+})
+
 // hati and sköll are the sons of Fenrir, 
 // representing the chase of the sun and moon
 const sunAndmoon = document.querySelector('.brand');
@@ -107,18 +120,6 @@ avatar.addEventListener('click', () => {
         // DO NOT SPOIL THE FUN OK 
     }
 });
-
-owlIcon.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-
-    if (document.body.classList.contains('light-mode')) {
-        localStorage.setItem('theme', 'light');
-        sunAndmoon.textContent = 'sköll';
-    } else {
-        localStorage.setItem('theme', 'dark');
-        sunAndmoon.textContent = 'hati';
-    }
-})
 
 
 // w claude
