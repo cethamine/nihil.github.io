@@ -43,44 +43,48 @@ window.addEventListener('DOMContentLoaded', () => {
         noContact.style.transform = 'translate(0, 0);';
     });
 
-    headerItems.forEach(item => {
-        item.addEventListener('click', function () {
-            const url = this.getAttribute('data-url');
-            document.querySelector('.active').classList.remove('active');
-            this.classList.toggle('active');
+    // yes todo fix this shit
+    // i dont care rn ok ok done bam boom
 
-            if (url) {
-                fetch(url)
-                    .then(response => response.text())
-                    .then(data => {
-                        const tdiv = document.createElement('div');
-                        tdiv.innerHTML = data;
 
-                        const scripts = tdiv.querySelectorAll('script');
-                        const tdivCode = tdiv.querySelector('#content').children;
-                        content.innerHTML = '';
-                        content.appendChild(tdivCode.item(0))
+    // headerItems.forEach(item => {
+    //     item.addEventListener('click', function () {
+    //         const url = this.getAttribute('data-url');
+    //         document.querySelector('.active').classList.remove('active');
+    //         this.classList.toggle('active');
 
-                        document.querySelectorAll('#dynamic-script').forEach(script => script.remove());
+    //         if (url) {
+    //             fetch(url)
+    //                 .then(response => response.text())
+    //                 .then(data => {
+    //                     const tdiv = document.createElement('div');
+    //                     tdiv.innerHTML = data;
 
-                        scripts.forEach(oldScript => {
-                            if (oldScript.src) {
-                                if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
-                                    const newScript = document.createElement('script');
-                                    newScript.src = oldScript.src;
-                                    newScript.defer = true;
-                                    document.body.appendChild(newScript);
-                                }
-                            } else {
-                                new Function(oldScript.textContent)();
-                            }
-                        });
-                    });
-            } else {
-                window.location.href = '/';
-            }
-        });
-    });
+    //                     const scripts = tdiv.querySelectorAll('script');
+    //                     const tdivCode = tdiv.querySelector('#content').children;
+    //                     content.innerHTML = '';
+    //                     content.appendChild(tdivCode.item(0))
+
+    //                     document.querySelectorAll('#dynamic-script').forEach(script => script.remove());
+
+    //                     scripts.forEach(oldScript => {
+    //                         if (oldScript.src) {
+    //                             if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
+    //                                 const newScript = document.createElement('script');
+    //                                 newScript.src = oldScript.src;
+    //                                 newScript.defer = true;
+    //                                 document.body.appendChild(newScript);
+    //                             }
+    //                         } else {
+    //                             new Function(oldScript.textContent)();
+    //                         }
+    //                     });
+    //                 });
+    //         } else {
+    //             window.location.href = '/';
+    //         }
+    //     });
+    // });
 });
 
 
