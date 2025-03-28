@@ -164,14 +164,18 @@ function moveAnchor(event) {
 // Disable right-click
 document.addEventListener('contextmenu', function (event) {
     event.preventDefault();
-    alert('No cheating ...');
+    alert('See if you can find all 3 easter eggs ;) ...');
 });
 
 // Disable F12 and Ctrl+Shift+I (Developer Tools)
 document.onkeydown = function (e) {
-    if (e.keyCode == 123 || // F12
-        (e.ctrlKey && e.shiftKey && e.keyCode == 73)) { // Ctrl+Shift+I
+    if (e.keyCode == 123) { // Ctrl+Shift+I
         e.preventDefault();
-        alert('No cheating bru xD ...');
+        alert('No cheating xD ...');
+    }
+    
+    if ((e.ctrlKey && e.shiftKey && e.keyCode == 73)) {
+        e.preventDefault();
+        alert('I said no chEATING! ...');
     }
 };
